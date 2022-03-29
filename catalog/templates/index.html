@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Libreria Local Home</h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <p>Bienvenido <em>Libreria Local</em>,un sitio web de Django</p>
+
+<h2>Contenido dinamico</h2>
+
+  <p>La biblioteca tiene los siguientes recuentos de registros:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+  </ul>
+  <p>Has visitado esta pagina {{ num_visits }}{% if num_visits == 1 %} time{% else %} veces{% endif %}.</p>
+{% endblock %}
